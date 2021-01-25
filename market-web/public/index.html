@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="./assets/favicon.ico">
+    <script src="./assets/global.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/socket.io/2.0.0/socket.io.js"></script>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        display: block;
+        position: relative;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 项目启动后此节点会被替换掉 -->
+    <div id="app">
+      
+    </div>
+  </body>
+</html>

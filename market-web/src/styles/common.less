@@ -1,0 +1,179 @@
+
+/* 颜色定义 ----start----*/
+@cff: #fff;
+@font-blod: #333;
+@font: #666;
+@font-light: #999;
+@cbg: #f5f5f5;
+/* 颜色定义 ----end----*/
+
+/* 通用方法 ----start----*/
+// 触摸方法
+.touch() {
+    cursor: pointer;
+    user-select: none;
+}
+
+.text-ellipsis() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+}
+/* 通用方法 ----end----*/
+
+
+// 项目容器
+.app-container {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: @cbg;
+    overflow-x: hidden;
+    &.main {
+        padding-top: 48px;
+        padding-left: 240px;
+        transition: all .25s linear;
+        &.collpase {
+            padding-left: 64px;
+            >aside {
+                width: 64px;
+            }
+            >nav {
+                left: 64px;
+            }
+        }
+    }
+    >aside,
+    >nav {
+        display: block;
+        position: absolute;
+        top: 0;
+        transition: all .25s linear;
+    }
+    >nav {
+        left: 240px;
+        right: 0;
+        height: 48px;
+        padding: 8px 12px;
+        background-color: @cff;
+        box-shadow: 0 0 15px rgba(0, 0, 0, .6);
+        overflow: hidden;
+        z-index: 9;
+        >.expand {
+            float: left;
+            width: 32px;
+            height: 32px;
+            background: url(../images/expand-icon.png) center center / 20px 20px no-repeat;
+            transition: all .25s linear;
+            .touch();
+            &.dis {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    >aside {
+        width: 240px;
+        height: 100%;
+        left: 0;
+        z-index: 8;
+        background-color: #303133;
+        >.title {
+            display: block;
+            position: relative;
+            height: 48px;
+            padding: 8px 12px;
+            font-size: 1rem;
+            color: @cff;
+            word-break: keep-all;
+            white-space: nowrap;
+            overflow: hidden;
+            i {
+                display: inline-block;
+                width: 32px;
+                height: 32px;
+                vertical-align: middle;
+                background: #f0f;
+                margin-right: 6px;
+            }
+        }
+        >.content {
+            display: block;
+            position: relative;
+            // 在less中的计算写法，原生写法: calc(100% - 48px)
+            height: calc(~"100% - 48px");
+            overflow-x: hidden;
+        }
+    }
+    >article {
+        display: block;
+        position: relative;
+        height: 100%;
+        padding: 12px;
+        background-color: #f8f8f8;
+    }
+}
+
+/* 菜单样式重写 --start */
+.el-menu-item.is-active {
+    background-color: #262729!important;
+}
+/* 菜单样式重写 --end */
+/* card样式重写 --start */
+.el-card__body {
+    padding: 12px;
+}
+/* card样式重写 --end */
+/* 表格样式重写 --start */
+.el-table td,
+.el-table th {
+    padding: 6px 0;
+}
+/* 表格框样式重写 --end */
+/* 弹出框样式重写 --start */
+.el-dialog {
+    margin-top: 8vh!important;
+    height: 72vh;
+}
+// 弹出框头
+.el-dialog__header {
+    font-size: .8rem;
+    border-bottom: solid 1px #ebeef5;
+}
+// 弹出框关闭按钮样式
+.el-dialog__headerbtn {
+    top: 8px;
+}
+// 弹出框底部
+.el-dialog__footer {
+    border-top: solid 1px #ebeef5;
+}
+
+// 弹出框体
+.el-dialog__body {
+    height: calc(~"100% - 91px");
+    overflow-x: hidden;
+}
+
+.el-dialog__header,
+.el-dialog__footer,
+.el-dialog__body {
+    padding: 8px 12px;
+}
+/* 弹出框样式重写 --end */
+
+/* 提示框样式重写 --start */
+.tooltip-cls {
+    width: 280px;
+}
+/* 提示框样式重写 --end */
+
+/* 生日样式框样式重写 --end */
+.el-table .cell {
+    text-align: center;
+}
+
+/* 提示框样式重写 --end */
